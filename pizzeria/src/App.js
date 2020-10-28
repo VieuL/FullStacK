@@ -26,6 +26,7 @@ function App() {
   }
 
   const [pizzas, addPizzas] = React.useState([]);
+  const [reservation, addReservation] = React.useState([]);
 
   return (
     <BrowserRouter>
@@ -39,7 +40,7 @@ function App() {
           </Route>
 
           <Route exact path="/carte-pizza">
-            <List pizzas={pizzas} setPizzas={addPizzas}/>
+            <List pizzas={pizzas} setPizzas={addPizzas} reservation={reservation} addReservation={addReservation}/>
           </Route>
 
           </Switch>

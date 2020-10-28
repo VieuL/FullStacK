@@ -29,7 +29,7 @@ const useStyles = makeStyles({
     },
   });
 
-export default function CardPizza({pizza, pizzas, setPizzas}) {
+export default function CardPizza({pizza, pizzas, setPizzas,reservation, addReservation}) {
 
     const classes = useStyles();
 
@@ -41,6 +41,11 @@ export default function CardPizza({pizza, pizzas, setPizzas}) {
 
     };
 
+    const addP = () => {
+      const reservationB = reservation.slice();
+      reservationB.push(pizza._id);
+      addReservation(reservationB);
+    }
     return(
 
         <Card className={classes.root} variant="outlined">
@@ -71,7 +76,7 @@ export default function CardPizza({pizza, pizzas, setPizzas}) {
         </CardActionArea>
         <CardActions>
 
-          <Button size="small" onClick={handleDelete} variant="primary">Ajouter au panier </Button>
+          <Button size="small" onClick={addP} variant="primary">Ajouter au panier </Button>
 
         </CardActions>
 
