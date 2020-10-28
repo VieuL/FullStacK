@@ -43,8 +43,9 @@ export default function CardPizza({pizza, pizzas, setPizzas,reservation, addRese
 
     const addP = () => {
       const reservationB = reservation.slice();
-      reservationB.push(pizza._id);
+      reservationB.push({id: Math.ceil(Math.random() * 10000),Pizza:  pizza});
       addReservation(reservationB);
+      console.log(reservation.length)
     }
     return(
 

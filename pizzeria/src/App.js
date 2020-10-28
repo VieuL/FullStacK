@@ -7,6 +7,7 @@ import ButtonAppBar from './components/navBar';
 import Home from './pages/home';
 import './App.css';
 import List from './pages/list';
+import Panier from './pages/panier'
 
 const proxy = require("http-proxy-middleware");
 
@@ -29,9 +30,10 @@ function App() {
   const [reservation, addReservation] = React.useState([]);
 
   return (
+
     <BrowserRouter>
     <div className="App">
-        <ButtonAppBar/>
+        <ButtonAppBar nbrR = {reservation}/>
 
           <Switch>
 
@@ -41,6 +43,10 @@ function App() {
 
           <Route exact path="/carte-pizza">
             <List pizzas={pizzas} setPizzas={addPizzas} reservation={reservation} addReservation={addReservation}/>
+          </Route>
+
+          <Route exact path="/panier">
+            <Panier reservation = {reservation}/>
           </Route>
 
           </Switch>

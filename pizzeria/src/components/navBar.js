@@ -12,6 +12,8 @@ import LocalPizzaIcon from '@material-ui/icons/LocalPizza';
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import { NavLink, Link } from "react-router-dom";
+import Badge from '@material-ui/core/Badge';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -25,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function ButtonAppBar() {
+export default function ButtonAppBar(nbrR) {
+  const nbr = nbrR.nbrR.length;
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -63,7 +66,7 @@ export default function ButtonAppBar() {
       activeStyle={{
         color: "Black"
       }}
-      style = {{color: "Black"}}
+      style = {{color: "Black", textDecoration: "none"}}
       >
 
         <IconButton aria-label="Voir la carte" color="inherit">
@@ -81,15 +84,24 @@ export default function ButtonAppBar() {
       </MenuItem>
 
       <MenuItem >
+      <NavLink to="/panier"
+      activeStyle={{
+        color: "Black"
+      }}
+      style = {{color: "Black", textDecoration: "none"}}
+      >
         <IconButton
           aria-label="account of current user"
           aria-controls="primary-search-account-menu"
           aria-haspopup="true"
           color="inherit"
         >
-          <ShoppingBasketIcon />
+            <Badge badgeContent={nbr} color="secondary">
+              <ShoppingBasketIcon />
+            </Badge>
         </IconButton>
-        <p>Mon panier</p>
+        Mon panier
+        </NavLink>
       </MenuItem>
     </Menu>
   );
