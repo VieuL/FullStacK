@@ -83,7 +83,7 @@ export default function ButtonAppBar(nbrR) {
         <p>Faire sa pizza</p>
       </MenuItem>
 
-      <MenuItem >
+      <MenuItem onClick = {handleMobileMenuClose}>
       <NavLink to="/panier"
       activeStyle={{
         color: "Black"

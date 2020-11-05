@@ -5,6 +5,7 @@ const express = require('express');
 //Use chalk to add colours on the console
 const chalk = require('chalk');
 
+const cors = require('cors');
 //to access form data
 let bodyParser = require('body-parser');
 
@@ -26,7 +27,7 @@ const mongoose = require('mongoose');
 
 //Create an application
 const app = express();
-
+app.use(cors());
 //used to fetch the data from forms on HTTP POST, and PUT
 app.use(bodyParser.urlencoded({
 
