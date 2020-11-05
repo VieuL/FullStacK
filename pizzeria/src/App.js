@@ -20,17 +20,18 @@ function App() {
   useEffect(() => {
     fetchPizzas();
   }, []);
+  // Récupération des pizzas
   const fetchPizzas = () => {
     makeGetRequest('http://localhost:3000/api/v1/pizzas')
     .then(( data ) => addPizzas(data))
     .catch((err) => console.log(err))
   }
 
+  // Création des var d'etat
   const [pizzas, addPizzas] = React.useState([]);
   const [reservation, addReservation] = React.useState([]);
 
   return (
-
     <BrowserRouter>
     <div className="App">
         <ButtonAppBar nbrR = {reservation}/>
@@ -46,7 +47,7 @@ function App() {
           </Route>
 
           <Route exact path="/panier">
-            <Panier reservation = {reservation}/>
+            <Panier reservation = {reservation} addReservation={addReservation}/>
           </Route>
 
           </Switch>

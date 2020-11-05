@@ -34,19 +34,12 @@ export default function CardPizza({pizza, pizzas, setPizzas,reservation, addRese
     const classes = useStyles();
 
 
-    const handleDelete = () => {
-
-        // ... submit to API or something
-        setPizzas(pizzas.filter((el) => el.id !== pizza.id));
-
-    };
-
     const addP = () => {
       const reservationB = reservation.slice();
-      reservationB.push({id: Math.ceil(Math.random() * 10000),Pizza:  pizza});
+      reservationB.push({id: reservationB.length,Pizza:  pizza});
       addReservation(reservationB);
-      console.log(reservation.length)
     }
+
     return(
 
         <Card className={classes.root} variant="outlined">
