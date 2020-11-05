@@ -9,7 +9,6 @@ import './App.css';
 import List from './pages/list';
 import Panier from './pages/panier'
 
-const proxy = require("http-proxy-middleware");
 
 async function makeGetRequest(url) {
   let res = await axios.get(url);

@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Badge from '@material-ui/core/Badge';
+
 
 const useStyles = makeStyles({
     root: {
@@ -40,6 +42,19 @@ export default function CardPizza({pizza, pizzas, setPizzas,reservation, addRese
       addReservation(reservationB);
     }
 
+    const count = () => {
+      let i = 0;
+      const id = pizza._id;
+      const reservationB = reservation.slice();
+      for (const µ in reservationB){
+        if(reservationB[µ].Pizza._id == id){
+          i++;
+        }
+      }
+      return i;
+    }
+
+
     return(
 
         <Card className={classes.root} variant="outlined">
@@ -70,8 +85,9 @@ export default function CardPizza({pizza, pizzas, setPizzas,reservation, addRese
         </CardActionArea>
         <CardActions>
 
+        <Badge badgeContent= {count()} color="secondary">
           <Button size="small" onClick={addP} variant="primary">Ajouter au panier </Button>
-
+        </Badge>
         </CardActions>
 
         </Card>
