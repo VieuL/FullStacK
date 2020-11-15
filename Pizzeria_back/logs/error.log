@@ -47,3 +47,5 @@ Mon, 19 Oct 2020 13:24:45 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Mon, 19 Oct 2020 13:24:54 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/pizzzas
 Mon, 26 Oct 2020 13:33:45 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
 Thu, 05 Nov 2020 07:09:38 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
+Sun, 15 Nov 2020 10:22:40 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
+Sun, 15 Nov 2020 10:32:03 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico

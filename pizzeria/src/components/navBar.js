@@ -75,14 +75,21 @@ export default function ButtonAppBar(nbrR) {
         La carte
       </NavLink>
       </MenuItem>
-
-      <MenuItem>
+      {/* ========================================== */}
+      <MenuItem  onClick = {handleMobileMenuClose}>
+      <NavLink to="/creation"
+               activeStyle={{
+                  color: "Black"
+                  }}
+                style = {{color: "Black", textDecoration: "none"}}
+      >
         <IconButton aria-label="Création d'une pizza" color="inherit">
             <LocalPizzaIcon />
         </IconButton>
-        <p>Faire sa pizza</p>
+        Faire sa pizza
+        </NavLink>
       </MenuItem>
-
+      {/* ========================================== */}
       <MenuItem onClick = {handleMobileMenuClose}>
       <NavLink to="/panier"
       activeStyle={{

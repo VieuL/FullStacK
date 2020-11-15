@@ -8,6 +8,7 @@ import Home from './pages/home';
 import './App.css';
 import List from './pages/list';
 import Panier from './pages/panier'
+import Creation from './pages/creationPizza';
 
 
 async function makeGetRequest(url) {
@@ -47,6 +48,10 @@ function App() {
 
           <Route exact path="/panier">
             <Panier reservation = {reservation} addReservation={addReservation}/>
+          </Route>
+
+          <Route exact path ="/creation">
+            <Creation />
           </Route>
 
           </Switch>
