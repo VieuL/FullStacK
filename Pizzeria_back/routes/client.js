@@ -1,40 +1,28 @@
-//Access the router on Express 
-const router = require('express').Router();
+let router = require('express').Router();
+let controller = require("../controllers/client");
 
-//Access the controllers
-const controller = require('../controllers/client');
+router.post('/signin', function(req, res) {
 
-//CREATE
-router.post("/client", (req, res) => {
-
-    controller.create(req, res);
+  controller.signin(req, res);
 
 });
 
-//READ
-router.get("/clients", (req, res) => {
 
-    controller.reads(req, res);
+router.post('/signout', function(req, res) {
 
-});
-
-router.get("/client/:id", (req, res) => {
-
-    controller.read(req, res);
+    controller.signout(req, res);
 
 });
 
-//UPDATE
-router.put("/client/:id", (req, res) => {
+router.post('/signup', function(req, res) {
 
-    controller.update(req, res);
+	controller.signup(req, res);
 
 });
 
-//DELETE
-router.delete("/client/:id", (req, res) => {
+router.get('/profile', function(req, res) {
 
-    controller.delete(req, res);
+	controller.profile(req, res);
 
 });
 

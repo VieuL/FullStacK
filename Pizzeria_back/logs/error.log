@@ -49,3 +49,9 @@ Mon, 26 Oct 2020 13:33:45 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Thu, 05 Nov 2020 07:09:38 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
 Sun, 15 Nov 2020 10:22:40 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
 Sun, 15 Nov 2020 10:32:03 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
+Sat, 21 Nov 2020 12:46:22 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/
+Sat, 21 Nov 2020 12:49:41 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/
+Sat, 21 Nov 2020 15:30:47 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 21 Nov 2020 15:30:59 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 21 Nov 2020 15:32:19 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 21 Nov 2020 15:33:21 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile

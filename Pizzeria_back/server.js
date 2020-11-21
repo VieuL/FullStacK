@@ -43,8 +43,6 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(bodyParser.json());
-
-
 //Use the morgan logging
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
