@@ -9,6 +9,7 @@ import './App.css';
 import List from './pages/list';
 import Panier from './pages/panier'
 import Creation from './pages/creationPizza';
+import Login from './pages/login';
 
 
 async function makeGetRequest(url) {
@@ -23,7 +24,7 @@ function App() {
   // Récupération des pizzas
   const fetchPizzas = () => {
     makeGetRequest('http://localhost:3000/api/v1/pizzas')
-    .then(( data ) => addPizzas(data))
+    .then((data) => addPizzas(data))
     .catch((err) => console.log(err))
   }
 
@@ -54,8 +55,12 @@ function App() {
             <Creation />
           </Route>
 
+          <Route exact path ="/login">
+            <Login/>
+          </Route>
+
           </Switch>
-        </div>
+    </div>
     </BrowserRouter>
 
   );

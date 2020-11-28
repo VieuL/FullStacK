@@ -55,3 +55,7 @@ Sat, 21 Nov 2020 15:30:47 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Sat, 21 Nov 2020 15:30:59 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
 Sat, 21 Nov 2020 15:32:19 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
 Sat, 21 Nov 2020 15:33:21 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 21 Nov 2020 15:45:23 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 21 Nov 2020 15:45:30 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 21 Nov 2020 15:48:29 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/api/v1/profile
+Sat, 28 Nov 2020 14:24:50 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico

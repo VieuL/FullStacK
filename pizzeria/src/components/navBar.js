@@ -59,7 +59,7 @@ export default function ButtonAppBar(nbrR) {
       open= {isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem onTouchTap={() => {this.handleClose() }} 
+      <MenuItem onTouchTap={() => {this.handleClose() }}
       onClick = {handleMobileMenuClose}
       >
       <NavLink to="/carte-pizza"
@@ -138,7 +138,7 @@ export default function ButtonAppBar(nbrR) {
             </h1>
             </NavLink>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" href='./login'>Login</Button>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
