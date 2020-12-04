@@ -25,18 +25,24 @@ const {loggers, transports, format} = require("winston");
 //Accessing MongoDB
 const mongoose = require('mongoose');
 
+//session allows to store data such as user data
+let session = require('express-session');
+
+//sessions are stored into MongoDB
+let MongoStore = require('connect-mongo')(session);
+
 //Create an application
 const app = express();
 app.use(cors());
+
 //used to fetch the data from forms on HTTP POST, and PUT
 app.use(bodyParser.urlencoded({
 
-    extended : true
+  extended : true
 
-  }));
+}));
 
 app.use(bodyParser.json());
-
 //Use the morgan logging
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms'));
 
@@ -77,6 +83,25 @@ const connectDb = async () => {
 
   connectDb().catch(error => console.error(error))
 
+  app.use(session({
+
+    resave: true,
+    saveUninitialized: true,
+    secret: 'mySecretKey',
+    store: new MongoStore({ url: 'mongodb://localhost:27017/auth', autoReconnect: true})
+
+  }));
+  app.disable('x-powered-by');
+
+
+  app.use(bodyParser.urlencoded({
+
+    extended : true
+
+  }));
+
+  app.use(bodyParser.json());
+
 
 //Accessing the routes for the user
 const pizzaRoutes = require('./routes/pizza');
@@ -84,6 +109,10 @@ const ingredientRoutes = require('./routes/ingredient')
 const clientRoutes = require('./routes/client')
 const commandeRoutes = require('./routes/commande')
 
+// Si on est rediriger vers la page / ==> On retourne Homepage
+app.get('/', (req, res) => {
+  res.send('Homepage');
+});
 
 //Acces the routes
 app.use('/api/v1/', pizzaRoutes);

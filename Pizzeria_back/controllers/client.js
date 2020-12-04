@@ -1,84 +1,62 @@
-function createClient(req, res) {
+function signin(req, res) {
+
     let Clients = require('../models/client');
 
-    let newClient = Clients ({
-        nom: req.body.nom,
-        prenom: req.body.prenom,
-        age: req.body.age,
-        adresse: req.body.adresse
+	Clients.findOne({username: req.body.account}, function(err, client) {
+		if (err) {
+            throw err;
+		}
+        console.log(req.body.password);
+		if (client.comparePassword(req.body.password)) {
+            req.session.username = req.body.account;
+			req.session.logged = true;
+			res.redirect('/profile');
+		}
+		else
+			res.redirect('/');
+	});
+}
 
-    });
+function signup(req, res) {
 
-    newClient.save()
-    .then((savedClient) => {
+    let Clients = require('../models/client');
+	let user = new Clients();
 
-        //send back the created Client
-        res.json(savedClient);
+	user.username = req.body.account;
+	user.password = req.body.password;
+    user.nom = req.body.nom;
+    user.prenom = req.body.prenom;
+    user.age = req.body.age;
+    user.adresse = req.body.adresse;
 
-    }, (err) => {
-        res.status(400).json(err)
-    });
+	user.save((err, savedUser) => {
+
+		if (err)
+			throw err;
+
+		res.redirect('/');
+
+	});
+}
+
+function signout(req, res) {
+
+    req.session.username = "";
+	req.session.logged = false;
+    res.redirect("/");
 
 }
 
-function readClients(req, res) {
+function profile(req, res) {
 
-    let Clients = require("../models/client");
+    if (req.session.logged)
+        res.send("Profile");
+    else
+        res.redirect('/');
 
-    Clients.find({})
-    .then((Clients) => {
-        res.status(200).json(Clients);
-    }, (err) => {
-        res.status(500).json(err);
-    });
- }
-
-function readClient(req, res) {
-
-    let Clients = require("../models/Client");
-
-    Clients.findById({_id : req.params.id})
-    .then((Client) => {
-        res.status(200).json(Client);
-    }, (err) => {
-        res.status(500).json(err);
-    });
- }
-
-function updateClient(req, res) {
-
-    let Clients = require("../models/client");
-
-    Clients.findByIdAndUpdate({_id: req.params.id},
-        {
-        adresse : req.body.bio,
-    },
-
-        {new : true})
-    .then((updatedClient) => {
-        res.status(200).json(updatedClient);
-    }, (err) => {
-        res.status(500).json(err);
-    });
 }
 
-function deleteClient(req, res) {
-
-    let Clients = require("../models/client");
-
-    Clients.findOneAndRemove({_id : req.params.id})
-    .then((deletedClient) => {
-        res.status(200).json(deletedClient);
-    }, (err) => {
-        res.status(500).json(err);
-    });
- }
-
-
-
-module.exports.create = createClient;
-module.exports.reads = readClients;
-module.exports.read = readClient;
-module.exports.delete = deleteClient;
-module.exports.update = updateClient;
-
+module.exports.signin = signin;
+module.exports.signup = signup;
+module.exports.signout = signout;
+module.exports.profile = profile;
