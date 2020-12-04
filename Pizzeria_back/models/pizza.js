@@ -12,3 +12,4 @@ var pizzaS = new Schema({
   image : String,
 });
 module.exports = mongoose.model('Pizzas', pizzaS);
+ 

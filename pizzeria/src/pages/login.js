@@ -1,19 +1,17 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-async function makePostRequest(url, user ,pass) {
+import ClientPage from '../pages/clientPage';
+import  { Redirect } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 
-    let res = await axios.post(url, {
-        username: user,
-        password: pass,
-    });
 
-    return res;
 
-}
-export default function Login(){
+export default function Login(UserID, addUserId){
     let user ='';
     let pass ='';
+    const [test, changeTest] = React.useState([false,'']);
+
     const handleChange = (e) => {
         if(e.target.name === 'user'){
             user = e.target.value;
@@ -23,12 +21,28 @@ export default function Login(){
         };
     };
 
-    const handleSubmit = (event) => {
-            event.preventDefault();
-            makePostRequest('http://localhost:3000/api/v1/signin',user, pass);
-          };
+    function makePostRequest(url, user ,pass) {
+        let res =  axios.post(url, {
+            account: user,
+            password: pass,
+        });
+        return res;
+    };
 
+    const handleSubmit = (event) => {
+
+
+        event.preventDefault();
+        makePostRequest('http://localhost:3000/api/v1/signin',user, pass)
+        .then(async (data) => {
+           changeTest([true,data.data]);
+        })
+        .catch((err) => null);
+        };
+    
+    if (test[0] === false){
     return(
+
         <form method='POST'>
         <div class="form-group">
         <h1>Connexion</h1><br/>
@@ -66,6 +80,11 @@ export default function Login(){
         </div>
         </div>
         </form>
-    )
+    )}
+else{
+    UserID.addUserId(test[1])
+    console.log(UserID.UserID);
+    return <ClientPage nom = {UserID.UserID} />
+}
 }
 

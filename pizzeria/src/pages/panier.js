@@ -4,7 +4,7 @@ import React from "react";
 import axios from 'axios';
 
 
-async function makePostRequest(url, lpizzas ,idClient,) {
+async function makePostRequest(url, lpizzas ,idClient) {
 
     let res = await axios.post(url, {
         pizzas: lpizzas,
@@ -12,13 +12,12 @@ async function makePostRequest(url, lpizzas ,idClient,) {
         commentaire: "",
     });
 
-    return res;
+    return res; 
 
 }
 
 
-function Panier (reservation, addReservation) {
-
+function Panier (reservation, addReservation, client, addUserId) {
     // Fonction pour calcuer le prix total de le réservation
     const totalPrix = () =>{
         let tot = 0;
@@ -49,7 +48,7 @@ function Panier (reservation, addReservation) {
             aRetourner.push(res[µ].Pizza._id)
         }
 
-        makePostRequest('http://localhost:3000/api/v1/commande',aRetourner, "5fa3c5eef90db7208cb07040")
+        makePostRequest('http://localhost:3000/api/v1/commande',aRetourner, reservation.client)
         .then(( data ) => console.log(data))
         .catch((err) => console.log(err))
 

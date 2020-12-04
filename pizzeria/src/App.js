@@ -20,8 +20,15 @@ async function makeGetRequest(url) {
 function App() {
   useEffect(() => {
     fetchPizzas();
+    fetchI();
   }, []);
+
   // Récupération des pizzas
+  const fetchI = () => {
+    makeGetRequest('http://localhost:3000/api/v1/ingredients')
+    .then((data) => addI(data))
+    .catch((err) => null)
+  }
   const fetchPizzas = () => {
     makeGetRequest('http://localhost:3000/api/v1/pizzas')
     .then((data) => addPizzas(data))
@@ -31,6 +38,8 @@ function App() {
   // Création des var d'etat
   const [pizzas, addPizzas] = React.useState([]);
   const [reservation, addReservation] = React.useState([]);
+  const [I, addI] = React.useState([]);
+  const [UserID, addUserId] = React.useState();
 
   return (
     <BrowserRouter>
@@ -44,11 +53,11 @@ function App() {
           </Route>
 
           <Route exact path="/carte-pizza">
-            <List pizzas={pizzas} setPizzas={addPizzas} reservation={reservation} addReservation={addReservation}/>
+            <List pizzas={pizzas} setPizzas={addPizzas} reservation={reservation} addReservation={addReservation} I = {I}/>
           </Route>
 
           <Route exact path="/panier">
-            <Panier reservation = {reservation} addReservation={addReservation}/>
+            <Panier reservation = {reservation} addReservation={addReservation} client={UserID} addUserId={addUserId}/>
           </Route>
 
           <Route exact path ="/creation">
@@ -56,7 +65,7 @@ function App() {
           </Route>
 
           <Route exact path ="/login">
-            <Login/>
+            <Login UserID = {UserID} addUserId = {addUserId}/>
           </Route>
 
           </Switch>

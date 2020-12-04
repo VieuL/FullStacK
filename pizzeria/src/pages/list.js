@@ -3,9 +3,9 @@ import React from 'react';
 import CardPizza from '../components/cardPizza';
 
 
-export default function List({pizzas, setPizzas, reservation, addReservation}) {
+export default function List({pizzas, setPizzas, reservation, addReservation, I}) {
 
-
+  console.log(I);
   return (
       <div>
 

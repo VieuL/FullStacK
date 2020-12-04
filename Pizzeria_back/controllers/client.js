@@ -1,16 +1,17 @@
 function signin(req, res) {
 
     let Clients = require('../models/client');
-
 	Clients.findOne({username: req.body.account}, function(err, client) {
 		if (err) {
             throw err;
 		}
-        console.log(req.body.password);
 		if (client.comparePassword(req.body.password)) {
             req.session.username = req.body.account;
 			req.session.logged = true;
-			res.redirect('/profile');
+			// Nous retournons le nom du client
+			res.status(200).json(client._id);
+			// res.redirect('/profile');
+
 		}
 		else
 			res.redirect('/');

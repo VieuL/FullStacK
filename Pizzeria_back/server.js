@@ -133,4 +133,4 @@ app.listen(3000, () => {
 });
 
 //Print out where the server is
-console.log(chalk.green("Server is running on port: 3000"));
+console.log(chalk.green("Server is running on port: 3000")); 
