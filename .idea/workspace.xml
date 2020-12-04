@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6c984d14-c2f7-479e-9183-d071ebfc99de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Pizzeria_back/logs/info.log" beforeDir="false" afterPath="$PROJECT_DIR$/Pizzeria_back/logs/info.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/WiredTiger.turtle" beforeDir="false" afterPath="$PROJECT_DIR$/data/WiredTiger.turtle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/WiredTiger.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data/WiredTiger.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/diagnostic.data/metrics.2020-11-28T13-13-58Z-00000" beforeDir="false" afterPath="$PROJECT_DIR$/data/diagnostic.data/metrics.2020-11-28T13-13-58Z-00000" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/diagnostic.data/metrics.interim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/index-6-6516698650693171374.wt" beforeDir="false" afterPath="$PROJECT_DIR$/data/index-6-6516698650693171374.wt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/journal/WiredTigerLog.0000000004" beforeDir="false" afterPath="$PROJECT_DIR$/data/journal/WiredTigerLog.0000000004" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/mongod.lock" beforeDir="false" afterPath="$PROJECT_DIR$/data/mongod.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1l73HrJ2JEIQ5FkqanzX5RotJ3D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6c984d14-c2f7-479e-9183-d071ebfc99de" name="Default Changelist" comment="" />
+      <created>1606934219008</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606934219008</updated>
+      <workItem from="1606934221994" duration="110000" />
+      <workItem from="1607007754547" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
