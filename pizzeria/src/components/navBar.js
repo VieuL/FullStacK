@@ -13,13 +13,14 @@ import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket';
 import RestaurantMenuIcon from '@material-ui/icons/RestaurantMenu';
 import { NavLink, Link } from "react-router-dom";
 import Badge from '@material-ui/core/Badge';
+import { blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {
     flexGrow: 1,
@@ -27,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-export default function ButtonAppBar(nbrR) {
+export default function ButtonAppBar(nbrR, UserID) {
   const nbr = nbrR.nbrR.length;
   const classes = useStyles();
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -131,14 +132,21 @@ export default function ButtonAppBar(nbrR) {
 
           <Typography variant="h6" className={classes.title}>
             <NavLink to="/"
-            style = {{color: "White", textDecoration: "none"}}
+            style = {{color: "White", textDecoration: "none", textAlign: 'center'}}
             >
-            <h1>
-            Tony pizza
-            </h1>
+            <div class="row justify-content-center">
+              <h1>
+                Tony pizza
+              </h1>
+            </div>
             </NavLink>
           </Typography>
-          <Button color="inherit" href='./login'>Login</Button>
+
+          {console.log(nbrR.UserID)}
+          {nbrR.UserID != null ? <Button color="inherit" href='./logout'>Déconnexion</Button>:
+          <div>
+          <Button style =  {{color:"white"}} color="inherit" href='./creatAcount'>Nouveau client</Button>
+          <Button style =  {{color:"white"}} color="inherit" href='./login'>Connexion</Button></div>}
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

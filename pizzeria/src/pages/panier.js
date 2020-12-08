@@ -2,6 +2,7 @@ import { colors } from "@material-ui/core";
 import Button from 'react-bootstrap/Button';
 import React from "react";
 import axios from 'axios';
+import  { Redirect } from 'react-router-dom';
 
 
 async function makePostRequest(url, lpizzas ,idClient) {
@@ -84,8 +85,11 @@ function Panier (reservation, addReservation, client, addUserId) {
                 <td></td>
             </tr>
             </table>
+             {reservation.client === null ?
 
-            <Button variant="success" onClick={validationC}> Valider la commande </Button>
+            <Button variant="success" onClick={validationC}> Valider la commande </Button>:
+            <Button variant="success" href = "/login"> Connexion </Button>
+            }
         </div>
     )
     }

@@ -1,4 +1,6 @@
 .App {
+  background-color:white;
+
   text-align: center;
 }
 
@@ -37,3 +39,4 @@
     transform: rotate(360deg);
   }
 }
+

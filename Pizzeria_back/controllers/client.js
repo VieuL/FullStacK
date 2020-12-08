@@ -3,7 +3,7 @@ function signin(req, res) {
     let Clients = require('../models/client');
 	Clients.findOne({username: req.body.account}, function(err, client) {
 		if (err) {
-            throw err;
+            res.status(200).json(err);
 		}
 		if (client.comparePassword(req.body.password)) {
             req.session.username = req.body.account;
@@ -14,7 +14,7 @@ function signin(req, res) {
 
 		}
 		else
-			res.redirect('/');
+			res.status(200).json({'sta':'erreur'});
 	});
 }
 
@@ -32,10 +32,10 @@ function signup(req, res) {
 
 	user.save((err, savedUser) => {
 
-		if (err)
-			throw err;
-
-		res.redirect('/');
+		if (err){
+			res.status(200).json(err);}
+		else {
+			res.redirect('/');}
 
 	});
 }

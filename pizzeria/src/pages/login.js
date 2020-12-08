@@ -8,10 +8,12 @@ import { createBrowserHistory } from 'history';
 
 
 export default function Login(UserID, addUserId){
+    // Variable de la page
     let user ='';
     let pass ='';
     const [test, changeTest] = React.useState([false,'']);
 
+    // Save des valeurs du form
     const handleChange = (e) => {
         if(e.target.name === 'user'){
             user = e.target.value;
@@ -21,6 +23,7 @@ export default function Login(UserID, addUserId){
         };
     };
 
+    // Canevas de la requete 
     function makePostRequest(url, user ,pass) {
         let res =  axios.post(url, {
             account: user,
@@ -29,17 +32,20 @@ export default function Login(UserID, addUserId){
         return res;
     };
 
+    // exécution de la requete
     const handleSubmit = (event) => {
 
 
         event.preventDefault();
         makePostRequest('http://localhost:3000/api/v1/signin',user, pass)
         .then(async (data) => {
-           changeTest([true,data.data]);
+            console.log(data);
+            if( data.data.sta === 'erreur'){alert("Erreur")}
+            else{changeTest([true,data.data]);}
         })
         .catch((err) => null);
         };
-    
+    // Quand nous avons pas valider 
     if (test[0] === false){
     return(
 
@@ -75,15 +81,15 @@ export default function Login(UserID, addUserId){
         <br/>
         <div class="row justify-content-center">
         <div class="col-4">
-        <input type="submit" value="Submit" onClick={handleSubmit}/>
+        <input type="submit" value="Connextion" onClick={handleSubmit}/>
         </div>
         </div>
         </div>
         </form>
     )}
+    // Quand nous avons valider la requetes alors on tombe sur la page utilisateurs
 else{
     UserID.addUserId(test[1])
-    console.log(UserID.UserID);
     return <ClientPage nom = {UserID.UserID} />
 }
 }

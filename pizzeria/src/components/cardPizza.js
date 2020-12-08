@@ -47,7 +47,7 @@ export default function CardPizza({pizza, pizzas, setPizzas,reservation, addRese
       const id = pizza._id;
       const reservationB = reservation.slice();
       for (const µ in reservationB){
-        if(reservationB[µ].Pizza._id == id){
+        if(reservationB[µ].Pizza._id === id){
           i++;
         }
       }

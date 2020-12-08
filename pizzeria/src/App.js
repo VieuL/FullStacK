@@ -10,7 +10,11 @@ import List from './pages/list';
 import Panier from './pages/panier'
 import Creation from './pages/creationPizza';
 import Login from './pages/login';
+import Logout from './components/logout'
+import CreatC from './pages/creationCompte'
+import { fade, makeStyles } from '@material-ui/core/styles';
 
+import './App.css';
 
 async function makeGetRequest(url) {
   let res = await axios.get(url);
@@ -44,7 +48,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-        <ButtonAppBar nbrR = {reservation}/>
+        <ButtonAppBar nbrR = {reservation} UserID = {UserID}/>
 
           <Switch>
 
@@ -66,6 +70,14 @@ function App() {
 
           <Route exact path ="/login">
             <Login UserID = {UserID} addUserId = {addUserId}/>
+          </Route>
+
+          <Route exact path ="/logout">
+            <Logout UserID = {UserID} addUserId = {addUserId}/>
+          </Route>
+
+          <Route exact path ="/creatAcount">
+            <CreatC/>
           </Route>
 
           </Switch>

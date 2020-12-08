@@ -31,8 +31,9 @@ export default function Creation() {
 
     return(
     <form onSubmit = {handelSummit}>
+      <h2>Fonctionnalité a venir</h2>
         <div class="form-group">
-        <h1>Votre pizza personalism </h1><br/>
+        <h1>Votre pizza personnalisée </h1><br/>
         <div class="row justify-content-center">
 
         <div class="col-4">
