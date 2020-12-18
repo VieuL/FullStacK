@@ -130,7 +130,7 @@ export default function Creation({UserID, addPizzas}) {
         <div class="row justify-content-center">
            <div class="col-4">
               {UserID != undefined?
-              <Button type="submit" value="Submit" onClick={handleSubmit}>Créer mon compte</Button>:
+              <Button type="submit" value="Submit" onClick={handleSubmit}>Créer ma pizza</Button>:
               <Button variant="success" href = "/login"> Connexion </Button>}
             </div>
         </div>
