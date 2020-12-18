@@ -69,7 +69,7 @@ const infoLogger = loggers.get('infoLogger');
 
 //Connecting to MongoDB (async/await approach)
 const connectDb = async () => {
-    await mongoose.connect('mongodb://localhost:27017/Pizzeria', {useNewUrlParser: true, useUnifiedTopology : true}).then(
+    await mongoose.connect('mongodb+srv://root:root@cluster0.lanpu.mongodb.net/pizza?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology : true}).then(
         () => {
             console.log(chalk.green(`Connected to database`))
             infoLogger.info("Connected to database");
@@ -88,7 +88,7 @@ const connectDb = async () => {
     resave: true,
     saveUninitialized: true,
     secret: 'mySecretKey',
-    store: new MongoStore({ url: 'mongodb://localhost:27017/auth', autoReconnect: true})
+    store: new MongoStore({ url: 'mongodb+srv://root:root@cluster0.lanpu.mongodb.net/pizza?retryWrites=true&w=majority', autoReconnect: true})
 
   }));
   app.disable('x-powered-by');
