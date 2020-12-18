@@ -58,7 +58,7 @@ function App() {
           </Route>
 
           <Route exact path="/carte-pizza">
-            <List pizzas={pizzas} setPizzas={addPizzas} reservation={reservation} addReservation={addReservation} I = {I}/>
+            <List pizzas={pizzas} setPizzas={addPizzas} reservation={reservation} addReservation={addReservation} I = {I} UserID = {UserID}/>
           </Route>
 
           <Route exact path="/panier">
@@ -66,7 +66,7 @@ function App() {
           </Route>
 
           <Route exact path ="/creation">
-            <Creation />
+            <Creation UserID = {UserID} addPizzas={addPizzas}/>
           </Route>
 
           <Route exact path ="/login">

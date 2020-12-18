@@ -9,14 +9,20 @@ async function makeGetRequest(url) {
   let data = res.data;
   return data;
 }
-export default function Creation() {
+
+
+export default function Creation({UserID, addPizzas}) {
     //Récup des ingresiants
     useEffect(() => {
         fetchIngrediants();
       }, []);
 
-    const [test, changeTest] = React.useState(false);
-
+      const [test, changeTest] = React.useState(false);
+      const fetchPizzas = () => {
+        makeGetRequest('http://localhost:3000/api/v1/pizzas')
+        .then((data) => addPizzas(data))
+        .catch((err) => console.log(err))
+      }
     //Fonction reque API création de la pizza
     function makePostRequest(url, name ,typePate, ingredients) {
         let res =  axios.post(url, {
@@ -25,8 +31,9 @@ export default function Creation() {
           ingredients: ingredients,
           carte: false,
           prix: 14,
-          image: "https://www.slate.fr/sites/default/files/styles/1200x680/public/reine-elizabeth-ii_0.jpg",
-          commentaire: 'Pizza perso'
+          image: "https://events.listic.univ-smb.fr/multitemp2015/images/POLYTECH_ANNECY-CHAMBERY.jpg",
+          commentaire: 'Pizza perso',
+          client: UserID,
         });
         return res;
     };
@@ -42,6 +49,7 @@ export default function Creation() {
         if(data.data.name === "MongoError"){
             alert('Erreur')
         } else{
+        fetchPizzas();
         console.log(data);
         changeTest(true);
         }})
@@ -121,7 +129,9 @@ export default function Creation() {
         <br/>
         <div class="row justify-content-center">
            <div class="col-4">
-              <Button type="submit" value="Submit" onClick={handleSubmit}>Créer mon compte</Button>
+              {UserID != undefined?
+              <Button type="submit" value="Submit" onClick={handleSubmit}>Créer mon compte</Button>:
+              <Button variant="success" href = "/login"> Connexion </Button>}
             </div>
         </div>
 

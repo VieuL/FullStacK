@@ -10,7 +10,8 @@ function createPizza(req, res) {
         ingredients: req.body.ingredients,
         carte: req.body.carte,
         commentaire: req.body.commentaire,
-        image: req.body.image
+        image: req.body.image,
+        client: req.body.client
     });
 
     newPizza.save()

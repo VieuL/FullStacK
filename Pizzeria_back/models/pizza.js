@@ -10,6 +10,8 @@ var pizzaS = new Schema({
   carte : Boolean,
   commentaire : {type: String, default: 'Pizza personalisée'},
   image : String,
+  client : String,
+
 });
 module.exports = mongoose.model('Pizzas', pizzaS);
  
