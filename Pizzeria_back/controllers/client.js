@@ -2,6 +2,7 @@ function signin(req, res) {
 
     let Clients = require('../models/client');
 	Clients.findOne({username: req.body.account}, function(err, client) {
+		console.log(req.body.account);
 		if (err) {
             res.status(200).json(err);
 		}
