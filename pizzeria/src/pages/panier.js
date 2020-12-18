@@ -85,7 +85,7 @@ function Panier (reservation, addReservation, client, addUserId) {
                 <td></td>
             </tr>
             </table>
-             {reservation.client === null ?
+             {reservation.client != undefined ?
 
             <Button variant="success" onClick={validationC}> Valider la commande </Button>:
             <Button variant="success" href = "/login"> Connexion </Button>

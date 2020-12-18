@@ -61,3 +61,17 @@ Sat, 21 Nov 2020 15:48:29 GMT | ERROR  | HTTP 404: ask for:  http://localhost:30
 Sat, 28 Nov 2020 14:24:50 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/favicon.ico
 Fri, 04 Dec 2020 13:05:49 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
 Fri, 04 Dec 2020 13:05:56 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/profile
+Sat, 12 Dec 2020 13:28:52 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:29:19 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:29:27 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listC/
+Sat, 12 Dec 2020 13:29:28 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listC/
+Sat, 12 Dec 2020 13:29:43 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/profile
+Sat, 12 Dec 2020 13:30:02 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listeC
+Sat, 12 Dec 2020 13:30:11 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listeC:5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:30:21 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listeC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:30:22 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listeC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:30:31 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listeC
+Sat, 12 Dec 2020 13:31:13 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/listeC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:31:49 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/readC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:32:15 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/readC/5fce628271a4d7214c914df6
+Sat, 12 Dec 2020 13:32:46 GMT | ERROR  | HTTP 404: ask for:  http://localhost:3000/api/v1/readC/5fce628271a4d7214c914df6

@@ -38,5 +38,9 @@ router.delete("/commande/:id", (req, res) => {
 
 });
 
+router.get('/readC/:client', function(req, res) {
+	controller.clientCom(req, res);
+});
+
 
 module.exports = router;

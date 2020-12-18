@@ -1,6 +1,7 @@
 import React,  {useState, useEffect} from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import axios from 'axios';
+import { fade, makeStyles } from '@material-ui/core/styles';
 
 import ButtonAppBar from './components/navBar';
 
@@ -10,9 +11,9 @@ import List from './pages/list';
 import Panier from './pages/panier'
 import Creation from './pages/creationPizza';
 import Login from './pages/login';
-import Logout from './components/logout'
-import CreatC from './pages/creationCompte'
-import { fade, makeStyles } from '@material-ui/core/styles';
+import Logout from './components/logout';
+import CreatC from './pages/creationCompte';
+import Historique from './pages/historique';
 
 import './App.css';
 
@@ -72,6 +73,8 @@ function App() {
             <Login UserID = {UserID} addUserId = {addUserId}/>
           </Route>
 
+
+
           <Route exact path ="/logout">
             <Logout UserID = {UserID} addUserId = {addUserId}/>
           </Route>
@@ -79,6 +82,12 @@ function App() {
           <Route exact path ="/creatAcount">
             <CreatC/>
           </Route>
+
+
+          <Route exact path = "/historique">
+            <Historique UserID = {UserID} addUserId = {addUserId}/>
+          </Route>
+
 
           </Switch>
     </div>

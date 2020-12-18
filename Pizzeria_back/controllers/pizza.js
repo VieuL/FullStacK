@@ -70,7 +70,7 @@ function updatePizza(req, res) {
 
     let Pizzas = require("../models/pizza");
 
-    Pizzas.findByIdAndUpdate({_id: req.params.id}, 
+    Pizzas.findByIdAndUpdate({_id: req.params.id},
         {name : req.body.name, 
         typePate : req.body.typePate,
         prix : req.body.prix,
@@ -100,7 +100,6 @@ function deletePizza(req, res) {
 function deleteIngredient(req, res) {
     let Pizzas = require("../models/pizza");
     const idi = req.body.idi;
-    console.log(idi);
     let listeIngredients = req.params.ingredients;
     let j = 0;
     for(const i in listeIngredients){

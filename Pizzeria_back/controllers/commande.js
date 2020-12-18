@@ -79,9 +79,21 @@ function deleteCommande(req, res) {
 
 
 
+ //Cette fonction retourne l'historique des commandes d'un utilisateurs
+ function clientCom(req, res) {
+    let Commandes = require("../models/commande");
+    Commandes.find(({client : req.params.client})).populate('pizzas').then((Commandes) => {
+        res.status(200).json(Commandes);
+    },(err) => {
+        res.status(500).json(err);
+    });
+ }
+
+
 
  module.exports.create = createCommande;
  module.exports.reads = readCommandes;
  module.exports.read = readCommande;
  module.exports.delete = deleteCommande;
  module.exports.update = updateCommande;
+ module.exports.clientCom = clientCom;

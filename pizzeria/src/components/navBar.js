@@ -115,6 +115,7 @@ export default function ButtonAppBar(nbrR, UserID) {
   );
 
   return (
+
     <div className={classes.root}>
       <AppBar position="sticky">
         <Toolbar >
@@ -130,24 +131,36 @@ export default function ButtonAppBar(nbrR, UserID) {
           </IconButton>
           </div>
 
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h1" className={classes.title}>
             <NavLink to="/"
             style = {{color: "White", textDecoration: "none", textAlign: 'center'}}
             >
-            <div class="row justify-content-center">
-              <h1>
-                Tony pizza
+
+              <h1 style={{margin:'auto', textAlign:'left'}}>
+              Tony pizza
               </h1>
-            </div>
             </NavLink>
           </Typography>
 
           {console.log(nbrR.UserID)}
-          {nbrR.UserID != null ? <Button color="inherit" href='./logout'>Déconnexion</Button>:
+          {nbrR.UserID != null ? 
+          <div>
+            <NavLink to="/historique"
+               activeStyle={{
+                  color: "white"
+                  }}
+                style = {{color: "white", textDecoration: "none"}}
+          >
+          <Button color="inherit">Mes commandes</Button>
+          </NavLink>
+          <Button color="inherit" href='./logout'>Déconnexion</Button>
+          </div>:
           <div>
           <Button style =  {{color:"white"}} color="inherit" href='./creatAcount'>Nouveau client</Button>
-          <Button style =  {{color:"white"}} color="inherit" href='./login'>Connexion</Button></div>}
+          <Button style =  {{color:"white"}} color="inherit" href='./login'>Connexion</Button>
+          </div>}
         </Toolbar>
+
       </AppBar>
       {renderMobileMenu}
     </div>
